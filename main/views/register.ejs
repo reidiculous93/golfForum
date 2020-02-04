@@ -1,0 +1,20 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+<h1>
+	Sign Up!
+</h1>
+
+<form action="/register" method="POST">
+	<label>Email Address</label>
+	<input class="email" type="text" name="username" placeholder="Email">
+	<label class="passwordText">Password</label>
+	<input class="password" type="password" name="password" placeholder="Password">
+	<button class="btn btn-primary">
+		Submit
+	</button>
+</form>
+
+<a href="login">Already have an account? Log in here!</a>
+
+<%- include("partials/footer") %>

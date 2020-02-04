@@ -1,0 +1,40 @@
+body {
+	background-color: #E8F6FD;
+}
+
+ .nav-item{
+    text-align: right;
+}
+
+.jumbotron {
+	background-color:#D6E3E9;
+	margin-top: 50px;
+	text-align: center;
+}
+
+#addBtn {
+	margin-top: 20px;
+}
+
+.thumbnail img {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+.delete-form {
+	margin-top: 10px;
+	display: inline;
+}
+
+#commentBody {
+	margin-top: 15px;
+}
+

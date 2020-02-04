@@ -1,0 +1,53 @@
+<%- include("../partials/header") %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">The Fore(um)</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= course.image %>">
+				<div class="caption-full">
+					<h4 class="pull-right">$<%= course.price %>/Round
+					<% if(currentUser && course.author.id.equals(currentUser._id)){ %>
+					<a id="edit" class="btn btn-warning btn-sm float-right" href="/courses/<%= course.id %>/edit">Edit Course</a>
+					</h4>
+					<h4><a><%= course.name %></a></h4>
+					<p><%= course.description %></p>
+					<p><em>Submitted by <%= course.author.username %></em></p>
+				</div>
+			</div>
+			<div class="well">
+				<div class="float-right">
+					<a class="btn btn-link" href="/courses/<%=course._id%>/comments/new"><i class="fas fa-comment"></i> Add New Comment</a>
+				</div>
+					<form action="/courses/<%= course.id %>?_method=DELETE" method="POST">
+						<button id="deleteBtn" class="btn btn-danger btn-sm delete-form">Delete Course</button>
+					<% } %>
+					</form>
+				<hr>
+
+				<% course.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= comment.author.username %></strong>
+							<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+							<a class="btn btn-sm btn-warning float-right" href="/courses/<%=course._id%>/comments/<%=comment._id%>/edit">Edit Comment</a>
+							<p id="commentBody"><%= comment.text %></p>
+							<form action="/courses/<%=course._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+								<input class="btn btn-sm btn-danger delete-form" type="submit" value="Delete Comment">
+							</form>
+							<% } %>
+						</div>
+					</div>
+				<%}) %>
+				</div>
+			</div>
+		</div>
+	</div>
+<%- include("../partials/footer") %>

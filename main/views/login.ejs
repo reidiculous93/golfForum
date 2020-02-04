@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+<link rel="stylesheet" href="stylesheets/login.css">
+<h1>
+	Log In
+</h1>
+
+<form id="loginForm" action="/login" method="POST">
+  <div>
+    <label>Email Address</label>
+    <input class="email" type="email" name="username" placeholder="Email" id="exampleInputEmail1">
+  </div>
+  <div>
+    <label class="passwordText">Password</label>
+    <input class="password" type="password" name="password" placeholder="Password" id="exampleInputPassword1" minlength="8">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<a id="registerLink" href="/register">Need an Account? Sign up Here!</a>
+
+
+<%- include("partials/footer") %>
