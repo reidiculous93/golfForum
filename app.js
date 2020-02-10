@@ -6,15 +6,15 @@ const express     = require("express"),
       passport    = require("passport"),
       localStrategy = require("passport-local"),
       methodOverride = require("method-override"),
-      Course      = require("./models/course"),
-      Comment     = require("./models/comment"),
-      User        = require("./models/user");
+      Course      = require("/models/course"),
+      Comment     = require("/models/comment"),
+      User        = require("/models/user");
       // seedDB      = require("./seeds");
     
 //requiring routes
-var commentRoutes    = require("./routes/comments"),
-    coursesRoutes     = require("./routes/courses"),
-    indexRoutes      = require("./routes/index");
+const commentRoutes    = require("/routes/comments"),
+    coursesRoutes     = require("/routes/courses"),
+    indexRoutes      = require("/routes/index");
 
 mongoose.connect("mongodb://localhost/courses");    
 // mongoose.connect(process.env.DATABASEURL, {
