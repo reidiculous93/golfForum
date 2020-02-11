@@ -16,17 +16,10 @@ body {
 	margin-top: 20px;
 }
 
-.thumbnail img {
-	width: 100%;
-	margin-top: 40px;
-}
-
-.thumbnail {
+.card-img-top {
+    width: 100%;
+    height: 10vw;
 	padding: 0;
-}
-
-.thumbnail .caption-full {
-	padding: 9px;
 }
 
 .delete-form {
